@@ -2,6 +2,8 @@ import 'package:doc_app/home.dart';
 import 'package:doc_app/settings/colors.dart';
 import 'package:flutter/material.dart';
 
+import 'bottom_bar.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: mainColor),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const BottomBar(),
     );
   }
 }

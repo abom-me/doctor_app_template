@@ -13,11 +13,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: Sizes.width(context),
-        height: Sizes.height(context),
-        padding: EdgeInsets.only(top: 100,left: 20,right: 20),
+    return Container(
+      width: Sizes.width(context),
+      height: Sizes.height(context),
+      padding: EdgeInsets.only(top: 100,left: 20,right: 20,bottom: 100),
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,79 +33,79 @@ class _HomeState extends State<Home> {
                     Text("Ahmed Salim",style: TextStyle(color: textColor,fontSize: 20,fontWeight: FontWeight.w600),),
                   ],
                 ),
-                
-               
+
+
                 Container(
-              
+
                   width: 50,
                   height: 50,
                   child: Stack(
                     alignment: Alignment.topRight,
                     children: [
-                    
+
                       Image.asset("assets/profile.png"),
                       Container(
                         width: 15,
                         height: 15,
-                       
+
                         decoration: BoxDecoration(
-                          color: darkColor,
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(color: Colors.white,width: 3)
+                            color: darkColor,
+                            borderRadius: BorderRadius.circular(100),
+                            border: Border.all(color: Colors.white,width: 3)
                         ),
                       ),
                     ],),
                 )
-                
+
               ],
             ),
-            
-            
+
+
             /// Search Box
             Container(
               padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 10),
               margin: const EdgeInsets.only(top: 40,bottom: 40),
               width: Sizes.width(context),
               height: 70,
-             
+
               decoration: BoxDecoration(
-                color: mainColor,
-                borderRadius: BorderRadius.circular(20)
+                  color: mainColor,
+                  borderRadius: BorderRadius.circular(20)
               ),
               child:   TextField(
                 decoration: InputDecoration(
-                  
-                  border: InputBorder.none,
-                  hintText: 'Search medical...',
-                  hintStyle: TextStyle(color: text2Color,fontWeight: FontWeight.w200,fontSize: 17),
-                  prefixIcon: Icon(Icons.search,color: text2Color,size: 40,),
-                  suffixIcon: Icon(Icons.filter_alt_rounded,color: textColor,size: 30,)
+
+                    border: InputBorder.none,
+                    hintText: 'Search medical...',
+                    hintStyle: TextStyle(color: text2Color,fontWeight: FontWeight.w200,fontSize: 17),
+                    prefixIcon: Icon(Icons.search,color: text2Color,size: 40,),
+                    suffixIcon: Icon(Icons.filter_alt_rounded,color: textColor,size: 30,)
                 ),
               ),
             ),
-            
-            
+
+
             /// Services
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Services',style: TextStyle(fontSize: 25,color: textColor,fontWeight: FontWeight.w500),),
-             SizedBox(
-               height: 20,
-             ),
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               children: [
-                topCard(cardColor: mainColor, image: 'assets/doctoricon.png', onTap: () { print('card1'); }),
-                topCard(cardColor: Color(0xffFAF0DB), image: 'assets/card2.png',onTap: () { print('card2'); }),
-                topCard(cardColor: Color(0xffD6F6FF), image: 'assets/card3.png',onTap: () { print('card3'); }),
-                topCard(cardColor: Color(0xffF2E3E9), image: 'assets/card4.png',),
-               ],
-             )
-             
+                  children: [
+                    topCard(cardColor: mainColor, image: 'assets/doctoricon.png', onTap: () { print('card1'); }),
+                    topCard(cardColor: Color(0xffFAF0DB), image: 'assets/card2.png',onTap: () { print('card2'); }),
+                    topCard(cardColor: Color(0xffD6F6FF), image: 'assets/card3.png',onTap: () { print('card3'); }),
+                    topCard(cardColor: Color(0xffF2E3E9), image: 'assets/card4.png',),
+                  ],
+                )
+
               ],
             ),
-            
+
             /// Main Card
             Container(
               padding: EdgeInsets.symmetric(horizontal: 25,vertical: 20),
@@ -113,35 +113,35 @@ class _HomeState extends State<Home> {
               width: Sizes.width(context),
               height: 180,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                    alignment: Alignment.bottomRight,
-                    image: AssetImage('assets/maincard.png')
-                  
-                ),
-                color: mainColor,
-                borderRadius: BorderRadius.circular(30)
+                  image: DecorationImage(
+                      alignment: Alignment.bottomRight,
+                      image: AssetImage('assets/maincard.png')
+
+                  ),
+                  color: mainColor,
+                  borderRadius: BorderRadius.circular(30)
               ),
               child: Row(
                 children: [
                   /// Text
-                 Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                  Container(
-                      width: 180,
-                    child:    AutoSizeText('''Get the Best Medical Service ''',maxLines:2,style: TextStyle(color: textColor,fontSize: 18,
-                        fontWeight: FontWeight.w600),),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 180,
+                        child:    AutoSizeText('''Get the Best Medical Service ''',maxLines:2,style: TextStyle(color: textColor,fontSize: 18,
+                            fontWeight: FontWeight.w600),),
+                      ),
+                      Container(
+                          width: 200,
+                          child: AutoSizeText('''Lorem Ipsum is simply dummy text of the printing  ''',
+                            maxLines:2,style: TextStyle(color: textColor,fontSize: 10,
+                                fontWeight: FontWeight.w100),)),
+                    ],
                   ),
-                     Container(
-                         width: 200,
-                         child: AutoSizeText('''Lorem Ipsum is simply dummy text of the printing  ''',
-                           maxLines:2,style: TextStyle(color: textColor,fontSize: 10,
-                               fontWeight: FontWeight.w100),)),
-                   ],
-                 ),
-                  
-                
+
+
                 ],
               ),
             ),
@@ -168,11 +168,11 @@ class _HomeState extends State<Home> {
                 )
 
               ],
-            ), 
-            
+            ),
+
           ],
-        ) ,
-      ),
+        ),
+      ) ,
     );
     
   }
